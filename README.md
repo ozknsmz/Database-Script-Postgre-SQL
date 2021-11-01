@@ -15,7 +15,7 @@
 <li>PostgreSQL Driver</li>
 <li>Spring Data JPA</li>
   
-  <h2>Images</h2>
+  <h3>GIFS</h3>
 
 <table>
 <thead>
@@ -33,3 +33,22 @@
 </tr>
 </tbody>
 </table>
+  
+  <h3>IMAGES</h3>
+ 
+  <table>
+<thead>
+<tr>
+<th>Swagger-Controller</th>
+<th>Postman-getAll</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener noreferrer" href="images/Swagger.png"><img src="images/Swagger.png" width="400" style="max-width:100%;"></a></td>
+<td><a target="_blank" rel="noopener noreferrer" href="images/Postman.png"><img src="images/Postman.png" width="400" style="max-width:100%;"></a></td>
+</tr>
+</tbody>
+</table>
+  
+  
