@@ -1,6 +1,7 @@
 package kodlama.io.northwind.dataAccess.abstracts;
 
 import kodlama.io.northwind.entities.concretes.Product;
+import kodlama.io.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -17,6 +18,10 @@ public interface ProductDao extends JpaRepository<Product, Integer> {
     Product getByProductNameAndCategory_CategoryId(String productName, int categoryId);
 
     List<Product> getByProductNameContains(String productName);
+
+    @Query("Select new kodlama.io.northwind.entities.dtos.ProductWithCategoryDto" +
+            "(p.id,p.productName,c.categoryName) " + "From Category c Inner Join c.products p")
+    List<ProductWithCategoryDto> getProductWithCategoryDetails();
 
 
 //    below methods can works..

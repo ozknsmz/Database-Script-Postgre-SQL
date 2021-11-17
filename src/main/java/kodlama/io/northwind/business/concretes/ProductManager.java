@@ -7,6 +7,7 @@ import kodlama.io.northwind.core.utilities.results.Result;
 import kodlama.io.northwind.core.utilities.results.SuccessResult;
 import kodlama.io.northwind.dataAccess.abstracts.ProductDao;
 import kodlama.io.northwind.entities.concretes.Product;
+import kodlama.io.northwind.entities.dtos.ProductWithCategoryDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -69,6 +70,7 @@ public class ProductManager implements ProductService {
         );
     }
 
+
     // Pageable Part
     @Override
     public DataResult<Collection<Product>> getAll(int pageNo, int pageSize) {
@@ -84,7 +86,16 @@ public class ProductManager implements ProductService {
         );
     }
 
+
+    @Override
+    public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
+        return new DataSuccessResult<List<ProductWithCategoryDto>>
+                (this.productDao.getProductWithCategoryDetails(), "Data Listelendi");
+    }
+
 }
+
+
 
 
 

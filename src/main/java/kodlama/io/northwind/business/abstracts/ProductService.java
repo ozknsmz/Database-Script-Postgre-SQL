@@ -3,7 +3,7 @@ package kodlama.io.northwind.business.abstracts;
 import kodlama.io.northwind.core.utilities.results.DataResult;
 import kodlama.io.northwind.core.utilities.results.Result;
 import kodlama.io.northwind.entities.concretes.Product;
-import org.springframework.data.jpa.repository.Query;
+import kodlama.io.northwind.entities.dtos.ProductWithCategoryDto;
 
 import java.util.Collection;
 import java.util.List;
@@ -24,6 +24,8 @@ public interface ProductService {
     DataResult<Product> getByProductNameAndCategory_CategoryId(String productName, int categoryId);
 
     DataResult<List<Product>> getByProductNameContains(String productName);
+
+    DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails();
 
   /*
     below methods can works..
